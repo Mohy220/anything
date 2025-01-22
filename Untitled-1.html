@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohy's Portfolio</title>
+    <link rel="stylesheet" href="Untitled-2.css">
+    <style>
+        /* Add some smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add fade-in effect for sections */
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add hover effect on links */
+        nav ul li a:hover {
+            color: #47fff9;
+            transition: color 0.3s ease;
+        }
+
+        /* Add animation for the contact details */
+        .contact-detail {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-detail:hover {
+            transform: scale(1.1);
+            color: #18bdef;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Welcome to Mohy's Portfolio</h1>
+            <p>Let's build something amazing together.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm Mohy, a passionate web developer based in Doha, Qatar. I specialize in creating user-friendly, interactive websites and web applications. I'm always curious to learn new technologies, and my goal is to create projects that leave a lasting impact. In my free time, I enjoy reading novels, playing football, and hanging out with my friends. If you're interested in collaborating or learning more about my work, feel free to reach out!</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I’ve worked on:</p>
+        <ul>
+            <li><strong>Website for Local Business</strong> - Developed a responsive website for a local business, including an e-commerce platform for customers to shop online.</li>
+            <li><strong>Portfolio Website</strong> - Built this personal portfolio to showcase my skills and projects. It includes interactive elements and smooth animations for a modern user experience.</li>
+            <li><strong>Task Management App</strong> - A web application for managing daily tasks with features like due dates, notifications, and progress tracking. Built with JavaScript and Python.</li>
+            <li><strong>Blog Platform</strong> - Created a blog platform with a custom content management system (CMS) allowing users to write, edit, and share their articles.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to reach out, feel free to contact me using the details below:</p>
+        <div class="contact-detail">
+            <strong>Phone:</strong> 974+ 33818624
+        </div>
+        <div class="contact-detail">
+            <strong>Email:</strong> <a href="mailto:mohym4851@gmail.com">mohym4851@gmail.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mohy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to add animation when sections are in view
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null,
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
